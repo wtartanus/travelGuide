@@ -36974,39 +36974,39 @@
 	var NavList = __webpack_require__(296);
 	
 	var Nav = React.createClass({
-	   displayName: "Nav",
+	  displayName: "Nav",
 	
 	
-	   getInitialState: function getInitialState() {
-	      return {
-	         navStatus: true
-	      };
-	   },
+	  getInitialState: function getInitialState() {
+	    return {
+	      navStatus: true
+	    };
+	  },
 	
-	   componentWillMount: function componentWillMount() {
-	      this.toggleNavBar();
-	   },
+	  componentWillMount: function componentWillMount() {
+	    this.toggleNavBar();
+	  },
 	
-	   toggleNavBar: function toggleNavBar() {
-	      if (this.props.windowSize.width < 500) {
-	         if (!this.state.navStatus) {
-	            this.setState({ navStatus: true, navUlStyle: { display: 'initial' }, navConatinerStyle: { width: '100%', backgroundColor: 'rgba(0,0,0,.9)' }, navToggleStyle: { color: 'white' } });
-	         }
-	
-	         if (this.state.navStatus) {
-	            this.setState({ navStatus: false, navUlStyle: { display: 'none' }, navConatinerStyle: { width: '10%' }, navToggleStyle: { color: 'black' } });
-	         }
+	  toggleNavBar: function toggleNavBar() {
+	    if (this.props.windowSize.width < 500) {
+	      if (!this.state.navStatus) {
+	        this.setState({ navStatus: true, navUlStyle: { display: 'initial' }, navConatinerStyle: { width: '100%', backgroundColor: 'rgba(0,0,0,.9)' }, navToggleStyle: { color: 'white' } });
 	      }
-	   },
 	
-	   render: function render() {
-	      return React.createElement(
-	         "div",
-	         { id: "nav-container", style: this.state.navConatinerStyle },
-	         React.createElement("i", { id: "nav-bar-toggle", onClick: this.toggleNavBar, style: this.state.navToggleStyle, className: "fa fa-bars", "aria-hidden": "true" }),
-	         React.createElement(NavList, { navStyle: this.state.navUlStyle })
-	      );
-	   }
+	      if (this.state.navStatus) {
+	        this.setState({ navStatus: false, navUlStyle: { display: 'none' }, navConatinerStyle: { width: '10%' }, navToggleStyle: { color: 'black' } });
+	      }
+	    }
+	  },
+	
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      { id: "nav-container", style: this.state.navConatinerStyle },
+	      React.createElement("i", { id: "nav-bar-toggle", onClick: this.toggleNavBar, style: this.state.navToggleStyle, className: "fa fa-bars", "aria-hidden": "true" }),
+	      React.createElement(NavList, { navStyle: this.state.navUlStyle })
+	    );
+	  }
 	});
 	
 	module.exports = Nav;
