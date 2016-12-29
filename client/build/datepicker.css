@@ -1,0 +1,55 @@
+#calendar-icon-datepicker {
+	margin-left: -20px;
+	cursor: pointer;
+}
+
+#calendar-icon-close {
+	float: right;
+	color: lightgray;
+	cursor: pointer;
+}
+
+.datepicker-arrow {
+	margin: 2px;
+	color: blue;
+	cursor: pointer;
+}
+
+#input-field-datepicker {
+	cursor: pointer;
+}
+
+#dates-container-datepicker {
+	background-color: white;
+	width: 13%;
+	height: 170px;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	padding: 2px;
+	font-family: 'Arapey', serif;
+}
+
+#dates-container-datepicker table {
+	margin: 0 auto;
+}
+
+#dates-container-datepicker h5 {
+	font-size: 1em;
+	display: inline-block;
+	width: 110px;
+}
+
+.populated-table-data-before {
+	cursor: not-allowed;
+	color: lightgray;
+}
+
+.populated-table-data {
+	cursor: pointer;
+}
+
+.populated-table-data:hover {
+	background-color: gray;
+	color: white;
+} 
