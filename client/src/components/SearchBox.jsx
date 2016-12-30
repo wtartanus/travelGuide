@@ -43,7 +43,7 @@ var Search = React.createClass({
   },
 
   disableSearchButton() {
-    var style = {cursor: "not-allowed",backgroundColor: "grey"}
+    var style = {cursor: "not-allowed"}
     
     this.setState({buttonStyle: style, searchEnable: false});
   },

@@ -32,8 +32,19 @@ var Travel = React.createClass({
 
 
   render: function() {
-    if (this.state.windowSize.width <= 500 ) {
-       return (
+    if(this.state.windowSize.width >= 1000) {
+      return (
+        <div>  
+          <div id="landing-container" style={this.state.heightStyle}>
+            <SearchBox setState={this.setState} setSearch={this.setSearchItem}/>
+            <div id="logo"><span id="travel-word">Travel</span> <span id="guide-word">Guide</span></div>
+            <p id="slogan">Everything you need in 1 place.</p>
+            <NavBox windowSize={this.state.windowSize} />
+          </div>
+        </div>
+        );
+    } else {
+         return (
          <div>
           <div id="landing-container">
             <NavBox windowSize={this.state.windowSize}/>
@@ -42,19 +53,7 @@ var Travel = React.createClass({
           <SearchBox setState={this.setState} setSearch={this.setSearchItem}/>
         </div>
       );
-    } 
-
-    if(this.state.windowSize.width >= 1000) {
-      return (
-        <div>  
-          <div id="landing-container" style={this.state.heightStyle}>
-          <NavBox windowSize={this.state.windowSize}/>
-            <h1 id="logo"><span id="travel-word">Travel</span> <span id="guide-word">Guide</span></h1>
-            <SearchBox setState={this.setState} setSearch={this.setSearchItem}/>
-          </div>
-        </div>
-        );
-    }   
+    }
   }
 });
 

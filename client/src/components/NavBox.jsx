@@ -23,7 +23,12 @@ var Nav = React.createClass({
 	               this.setState({navStatus: false, navUlStyle: {display: 'none'}, navConatinerStyle: {width: '10%'}, navToggleStyle: {color: 'black'}});
 	         	}
          	}
-         
+
+            if(this.props.windowSize.width >= 1000) {
+               this.setState({navConatinerStyle: {
+                  top: this.props.windowSize.heigth - 80 + "px"
+               }});
+            }   
          },
 
           render: function () {

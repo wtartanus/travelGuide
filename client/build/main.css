@@ -43,11 +43,11 @@ body {
 	height: 60px;
 	padding-top: 17px;
 	border: 2px solid white;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Playfair Display SC', serif;
-    letter-spacing: .2em;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Playfair Display SC', serif;
+  letter-spacing: .2em;
 }
 
 #logo {
@@ -96,14 +96,14 @@ body {
 }
 
 #travel-search button {
-	border-radius: 7px;
+	border-radius: 10px;
 	width: 75px;
-	height: 30px;
+	height: 25px;
 	margin-top: 10px;
 	color: white;
-	background-color: grey;
+	background-color: darkgreen;
 	cursor: not-allowed;
-	border: 2px solid navy;
+	border: 2px solid green;
 }
 
 
@@ -142,7 +142,7 @@ body {
     }
 
     #travel-search {
-    	margin-top: 16%;
+    	margin-top: 10%;
     	border: none;
     	text-align: initial;
     }
@@ -151,23 +151,40 @@ body {
       color: white;
       font-size: 1.2em;
       font-weight: bold;
-      text-shadow: 2px 2px 2px darkblue;
+      text-shadow: 2px 2px 2px black;
     }
 
     #search-form {
-    	width: 42%;
+    	width: 43%;
     	margin: 0 auto;
+      padding-bottom: 1em;
     }
-
+    
     #search-form button {
     	margin-left: 41%;
     	width: 17%;
-    	height: 45px;
+    	height: 30px;
     }
 
     #logo {
-    	margin-top: 8%;
-    	font-size: 4em;
+      text-align: right;
+      padding-right: 160px;
+    	margin-top: 10%;
+    	font-size: 3.8em;
+    }
+
+    #guide-word {
+      font-size: 2em;
+    }
+
+    #slogan {
+      font-family: 'Emblema One', cursive;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+      font-size: 1.2em;
+      width: 25%;
+      float: right;
+      margin-right: 14%;
     }
 
     .form-input {
@@ -176,8 +193,10 @@ body {
     }
 
     #nav-container {
-    	background-color: rgba(0,0,0,.9);
+    	background-color: rgba(43,138,65,.9);
+      height: 80px;
     	position: fixed;
+      top: 0;
     }
 
     #nav-bar {
@@ -195,7 +214,7 @@ body {
     }
 
     .nav-item:hover {
-    	background-color: white;
-    	color: black;
+    	color: blue;
+      font-size: .7em;
     }
 }

@@ -21503,7 +21503,38 @@
 	  },
 	
 	  render: function render() {
-	    if (this.state.windowSize.width <= 500) {
+	    if (this.state.windowSize.width >= 1000) {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'div',
+	          { id: 'landing-container', style: this.state.heightStyle },
+	          React.createElement(SearchBox, { setState: this.setState, setSearch: this.setSearchItem }),
+	          React.createElement(
+	            'div',
+	            { id: 'logo' },
+	            React.createElement(
+	              'span',
+	              { id: 'travel-word' },
+	              'Travel'
+	            ),
+	            ' ',
+	            React.createElement(
+	              'span',
+	              { id: 'guide-word' },
+	              'Guide'
+	            )
+	          ),
+	          React.createElement(
+	            'p',
+	            { id: 'slogan' },
+	            'Everything you need in 1 place.'
+	          ),
+	          React.createElement(NavBox, { windowSize: this.state.windowSize })
+	        )
+	      );
+	    } else {
 	      return React.createElement(
 	        'div',
 	        null,
@@ -21528,34 +21559,6 @@
 	          )
 	        ),
 	        React.createElement(SearchBox, { setState: this.setState, setSearch: this.setSearchItem })
-	      );
-	    }
-	
-	    if (this.state.windowSize.width >= 1000) {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'div',
-	          { id: 'landing-container', style: this.state.heightStyle },
-	          React.createElement(NavBox, { windowSize: this.state.windowSize }),
-	          React.createElement(
-	            'h1',
-	            { id: 'logo' },
-	            React.createElement(
-	              'span',
-	              { id: 'travel-word' },
-	              'Travel'
-	            ),
-	            ' ',
-	            React.createElement(
-	              'span',
-	              { id: 'guide-word' },
-	              'Guide'
-	            )
-	          ),
-	          React.createElement(SearchBox, { setState: this.setState, setSearch: this.setSearchItem })
-	        )
 	      );
 	    }
 	  }
@@ -21611,7 +21614,7 @@
 	  },
 	
 	  disableSearchButton: function disableSearchButton() {
-	    var style = { cursor: "not-allowed", backgroundColor: "grey" };
+	    var style = { cursor: "not-allowed" };
 	
 	    this.setState({ buttonStyle: style, searchEnable: false });
 	  },
@@ -36974,39 +36977,45 @@
 	var NavList = __webpack_require__(296);
 	
 	var Nav = React.createClass({
-	  displayName: "Nav",
+	   displayName: "Nav",
 	
 	
-	  getInitialState: function getInitialState() {
-	    return {
-	      navStatus: true
-	    };
-	  },
+	   getInitialState: function getInitialState() {
+	      return {
+	         navStatus: true
+	      };
+	   },
 	
-	  componentWillMount: function componentWillMount() {
-	    this.toggleNavBar();
-	  },
+	   componentWillMount: function componentWillMount() {
+	      this.toggleNavBar();
+	   },
 	
-	  toggleNavBar: function toggleNavBar() {
-	    if (this.props.windowSize.width < 500) {
-	      if (!this.state.navStatus) {
-	        this.setState({ navStatus: true, navUlStyle: { display: 'initial' }, navConatinerStyle: { width: '100%', backgroundColor: 'rgba(0,0,0,.9)' }, navToggleStyle: { color: 'white' } });
+	   toggleNavBar: function toggleNavBar() {
+	      if (this.props.windowSize.width < 500) {
+	         if (!this.state.navStatus) {
+	            this.setState({ navStatus: true, navUlStyle: { display: 'initial' }, navConatinerStyle: { width: '100%', backgroundColor: 'rgba(0,0,0,.9)' }, navToggleStyle: { color: 'white' } });
+	         }
+	
+	         if (this.state.navStatus) {
+	            this.setState({ navStatus: false, navUlStyle: { display: 'none' }, navConatinerStyle: { width: '10%' }, navToggleStyle: { color: 'black' } });
+	         }
 	      }
 	
-	      if (this.state.navStatus) {
-	        this.setState({ navStatus: false, navUlStyle: { display: 'none' }, navConatinerStyle: { width: '10%' }, navToggleStyle: { color: 'black' } });
+	      if (this.props.windowSize.width >= 1000) {
+	         this.setState({ navConatinerStyle: {
+	               top: this.props.windowSize.heigth - 80 + "px"
+	            } });
 	      }
-	    }
-	  },
+	   },
 	
-	  render: function render() {
-	    return React.createElement(
-	      "div",
-	      { id: "nav-container", style: this.state.navConatinerStyle },
-	      React.createElement("i", { id: "nav-bar-toggle", onClick: this.toggleNavBar, style: this.state.navToggleStyle, className: "fa fa-bars", "aria-hidden": "true" }),
-	      React.createElement(NavList, { navStyle: this.state.navUlStyle })
-	    );
-	  }
+	   render: function render() {
+	      return React.createElement(
+	         "div",
+	         { id: "nav-container", style: this.state.navConatinerStyle },
+	         React.createElement("i", { id: "nav-bar-toggle", onClick: this.toggleNavBar, style: this.state.navToggleStyle, className: "fa fa-bars", "aria-hidden": "true" }),
+	         React.createElement(NavList, { navStyle: this.state.navUlStyle })
+	      );
+	   }
 	});
 	
 	module.exports = Nav;
