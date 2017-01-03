@@ -14,7 +14,7 @@ var Nav = React.createClass({
 	     },
          
          toggleNavBar: function() {
-         	if(this.props.windowSize.width < 500) {
+         	if(this.props.windowSize.width < 600) {
                	if(!this.state.navStatus) {
 	               this.setState({navStatus: true, navUlStyle: {display: 'initial'}, navConatinerStyle: {width: '100%', backgroundColor: 'rgba(0,0,0,.9)'}, navToggleStyle: {color: 'white'}});
 	         	}
