@@ -97,12 +97,12 @@ var Search = React.createClass({
       <div id="travel-search">
         <form id="search-form" onSubmit={this.handleSubmit}>
           <div className="form-input">
-            <label htmlFor="to">Destination:</label> <br/>
+            <label htmlFor="to">Destination</label> <br/>
             <input name="to" type="text" onChange={this.isValid} />
           </div>
 
           <div className="form-input">
-            <label htmlFor="start">Start:</label><br/>
+            <label htmlFor="start">Start</label><br/>
             <input name="start" type="text"/>
           </div>
 

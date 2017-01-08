@@ -21503,13 +21503,83 @@
 	  },
 	
 	  render: function render() {
-	    if (this.state.windowSize.width >= 1000) {
+	    if (this.state.windowSize.width >= 1650) {
 	      return React.createElement(
 	        'div',
 	        null,
 	        React.createElement(
 	          'div',
 	          { id: 'landing-container', style: this.state.heightStyle },
+	          React.createElement(
+	            'div',
+	            { id: 'photo-1', className: 'images' },
+	            React.createElement(
+	              'span',
+	              { className: 'name' },
+	              'Bali, Indonesia'
+	            ),
+	            React.createElement('i', { className: 'fa fa-heart heart', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-1', 'aria-hiddenName': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-2', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-3', 'aria-hidden': 'true' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'photo-2', className: 'images' },
+	            React.createElement(
+	              'span',
+	              { className: 'name' },
+	              'Barcelona, Spain'
+	            ),
+	            React.createElement('i', { className: 'fa fa-heart heart', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-1', 'aria-hiddenName': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-2', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-3', 'aria-hidden': 'true' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'photo-3', className: 'images' },
+	            React.createElement(
+	              'span',
+	              { className: 'name' },
+	              'Cracow, Poland'
+	            ),
+	            React.createElement('i', { className: 'fa fa-heart heart', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-1', 'aria-hiddenName': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-2', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-3', 'aria-hidden': 'true' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'photo-4', className: 'images' },
+	            React.createElement(
+	              'span',
+	              { className: 'name' },
+	              'Protaras, Cyprus'
+	            ),
+	            React.createElement('i', { className: 'fa fa-heart heart', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-1', 'aria-hiddenName': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-2', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-3', 'aria-hidden': 'true' })
+	          ),
+	          React.createElement(
+	            'div',
+	            { id: 'photo-5', className: 'images' },
+	            React.createElement(
+	              'span',
+	              { className: 'name' },
+	              'New York, US'
+	            ),
+	            React.createElement('i', { className: 'fa fa-heart heart', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-1', 'aria-hiddenName': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-2', 'aria-hidden': 'true' }),
+	            React.createElement('i', { className: 'fa fa-star star star-3', 'aria-hidden': 'true' })
+	          ),
 	          React.createElement(SearchBox, { setState: this.setState, setSearch: this.setSearchItem }),
 	          React.createElement(
 	            'div',
@@ -21529,12 +21599,12 @@
 	          React.createElement(
 	            'p',
 	            { id: 'slogan' },
-	            'Everything you need in 1 place.'
+	            'Everything you looking for in 1 place.'
 	          ),
 	          React.createElement(NavBox, { windowSize: this.state.windowSize })
 	        )
 	      );
-	    } else {
+	    } else if (this.state.windowSize.width >= 1000) {} else {
 	      return React.createElement(
 	        'div',
 	        null,
@@ -21676,7 +21746,7 @@
 	          React.createElement(
 	            'label',
 	            { htmlFor: 'to' },
-	            'Destination:'
+	            'Destination'
 	          ),
 	          ' ',
 	          React.createElement('br', null),
@@ -21688,7 +21758,7 @@
 	          React.createElement(
 	            'label',
 	            { htmlFor: 'start' },
-	            'Start:'
+	            'Start'
 	          ),
 	          React.createElement('br', null),
 	          React.createElement('input', { name: 'start', type: 'text' })
