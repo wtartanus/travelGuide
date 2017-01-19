@@ -9,7 +9,7 @@ class Photo
 		@link = options['link']
 	end
 
-	def dave()
+	def save()
 		sql = "INSERT INTO photos (city_id, link)
                VALUES (
                  #{@city_id},
@@ -26,13 +26,19 @@ class Photo
 		return photo
 	end
 
+	def self.getByCity(cityId)
+		sql = "SELECT * FROM photos WHERE city_id = #{cityId}"
+		photos = Photo.map_items(sql)
+		return photos
+	end
+
 	def self.all() 
 		sql = "SELECT * FROM photos"
 		photos = Photo.map_items(sql)
 		return photos
 	end
 
-	def self.update(update)
+	def self.update(options)
 		sql = "UPDATE photos SET 
 		       city_id = #{options[:city_id]},
 		       link = '#{options[:link]}'

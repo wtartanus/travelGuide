@@ -1,5 +1,5 @@
 require ("sinatra");
 
-get "/" do 
+get "/insirations" do 
 	return "hello world"
 end
