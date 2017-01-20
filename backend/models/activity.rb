@@ -3,6 +3,9 @@ class Activity
 	attr_reader :id
 	attr_accessor :city_id, :name, :description, :address, :photo_link
 
+	def initialize()
+	end
+
 	def initialize(options)
 		@id = options['id'].to_i
 		@city_id = options['city_id'].to_i

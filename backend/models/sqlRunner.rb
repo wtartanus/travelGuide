@@ -1,4 +1,4 @@
-require('pg');
+require('rb');
 
 class SqlRunner
 

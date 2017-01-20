@@ -1,15 +1,13 @@
+require_relative './sqlRunner'
+
 class City
 
-	attr_reader :id
-	attr_accessor :city, :country, :descritption, :history
+	
 
-	def initialize(options)
-		@id = options['id'].to_i
-		@city = options['city']
-		@country = options['country']
-		@descritption = options['descritption']
-		@history = options['history']
+	def self.new()
 	end
+
+
 
 	def save()
 		sql = "INSERT INTO photos (city, country, descritption, history)
@@ -20,26 +18,26 @@ class City
                  #{@history}
                ) RETURNING *"
 
-          inspiration = SqlRunner.run(sql);
-          return inspiration
+          city = SqlRunner.run(sql);
+          return city
 	end
 
 	def self.find(id)
 		sql = "SELECT * FROM inspirations WHERE id = #{id}"
-		inspiration = City.map_item(sql)
-		return inspiration
+		city = City.map_item(sql)
+		return city
 	end
 
 	def self.getByCityName(city)
 		sql = "SELECT * FROM inspirations WHERE city = #{city}"
-		inspiration = City.map_items(sql)
-		return inspiration
+		city = City.map_items(sql)
+		return city
 	end
 
 	def self.all() 
 		sql = "SELECT * FROM inspirations"
-		inspirations = City.map_items(sql)
-		return inspirations
+		citys = City.map_items(sql)
+		return citys
 	end
 
 	def self.update(options)
@@ -65,7 +63,7 @@ class City
 
 	def self.map_items(sql)
 		citys = SqlRunner.run(sql)
-		result = citys.map( |city| City.new( city ) )
+		result = citys.map{ | city | City.new( city )}
 		return result
 	end
 
