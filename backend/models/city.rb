@@ -1,10 +1,19 @@
-require_relative './sqlRunner'
+require './sqlRunner'
 
 class City
 
-	
+	attr_reader :id
+	attr_accessor :city, :country, :description, :history
 
-	def self.new()
+	def self.new1()
+	end
+
+	def initialize(options)
+	   @id = options['id'].to_i
+       @city = options['city']
+       @country = options['country']
+       @description = options['description']
+       @history = options['history']
 	end
 
 
@@ -14,7 +23,7 @@ class City
                VALUES (
                  #{@city},
                  #{@country},
-                 #{@descritption},
+                 #{@description},
                  #{@history}
                ) RETURNING *"
 
@@ -44,7 +53,7 @@ class City
 		sql = "UPDATE photos SET 
 		       city = #{options[:city]},
 		       country = '#{options[:country]}',
-		       descritption = '#{options[:descritption]}',
+		       descritption = '#{options[:description]}',
 		       history = '#{options[:history]}'
 		       WHERE id = #{options[:id]}"
 
@@ -63,7 +72,9 @@ class City
 
 	def self.map_items(sql)
 		citys = SqlRunner.run(sql)
+
 		result = citys.map{ | city | City.new( city )}
+
 		return result
 	end
 
